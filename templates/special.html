@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -16,7 +17,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Forum&family=Frank+Ruhl+Libre:wght@300..900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="../static/special/style.css">
 </head>
 
 <body class="loading">
@@ -41,10 +42,10 @@
       <div class="decorative-elements">
         <div class="flower-5"></div>
         <div class="svg-line">
-          <img src="./img/line.svg" alt="decorative line" width="6" height="215">
+          <img src="../static/special/img/line.svg" alt="decorative line" width="6" height="215">
         </div>
         <div class="svg-line svg_line_1">
-          <img src="./img/line1.svg" alt="decorative line" width="6" height="215">
+          <img src="../static/special/img/line1.svg" alt="decorative line" width="6" height="215">
         </div>
 
         <div class="decorative-elements_flower">
@@ -66,9 +67,21 @@
 
       <div class="content">
         <div class="brand-logo">
-          <img src="./img/r&m.png" alt="">
+          <img src="../static/special/img/r&m.png" alt="">
         </div>
-        <div class="title quote">Таклифнома</div> <!-- Добавил класс -->
+        <div class="">
+
+          <div class="title ">
+            {% if name %}
+
+            “{{ name }}” учун
+
+            {% else %}
+            <div></div>
+            {% endif%}
+          </div>
+          <div class="title quote">Таклифнома</div> <!-- Добавил класс -->
+        </div>
         <div class="date-container">
           <div class="date-number number quote">07</div> <!-- Добавил класс -->
           <div class="content__date_boll"></div>
@@ -91,7 +104,14 @@
     <section class="section_2">
       <div class="section_2_title">
         <h1>Ассалому алайкум, ҳурматли
-          “Хожиакбар”</h1>
+          {% if name %}
+
+          “{{ name }}” учун
+
+          {% else %}
+          <div></div>
+          {% endif%}
+        </h1>
         <p>
           Сизни 7-июль куни бўлиб ўтадиган никоҳ тўйимиз муносабати билан болиб отадиган наҳорги нонуштага таклиф
           киламиз
@@ -176,7 +196,7 @@
           </div>
         </div>
       </div>
-      <img src="./img/block_3.png" alt="">
+      <img src="../static/special/img/block_3.png" alt="">
     </div>
     <div class="Leneee">
       <div class="Leneee_1"></div>
@@ -204,7 +224,7 @@
 
 
   <!-- Твой файл -->
-  <script src="./app.js"></script>
+  <script src="../static/special/app.js"></script>
 
 
 
@@ -264,3 +284,22 @@
 </body>
 
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if name %}
+    
+        <h1>Welcome to the wedding invitation, {{ name }}!</h1>
+
+    {% else %}
+        <h1>Welcome to the wedding invitation!</h1>
+    {% endif %}
+</body>
+</html> -->
